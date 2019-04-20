@@ -1,5 +1,3 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
 const db = require('../models');
 const scrape = require('../helpers/scrape.js');
 
@@ -24,9 +22,7 @@ module.exports = app => {
   app.get('/articles/:id', (req, res) => {
     db.Article.findById(req.params.id)
       .populate('note')
-      .then(data => {
-        res.json(data.note);
-      })
+      .then(data => res.json(data.note))
       .catch(err => res.json(err));
   });
 
