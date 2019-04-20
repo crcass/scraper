@@ -1,0 +1,34 @@
+<article class="article-container">
+  <a href={{link}} target="_blank" rel="noopener noreferrer"><img src="{{image}}" alt=""></a>
+  <div class="text-container">
+    <a href={{link}} target="_blank" rel="noopener noreferrer">
+      <h2>{{title}}</h2>
+    </a>
+    <p>By {{byline}}</p>
+    <div class="button-container">
+      <button class="save-favs" data-articleid={{_id}} data-akey={{key}} data-image={{image}} data-title="{{title}}"
+        data-byline="{{byline}}" data-link={{link}} {{#if note}}data-note={{note._id}}{{/if}}>Save to Favs</button>
+      <button class="show-notes" data-button={{key}}>Notes</button>
+    </div>
+    <div class="note-container">
+      <div class="note" data-key={{key}}>
+        <form id="form-{{key}}">
+          <label for="title">Title</label>
+          <input type="text" id="title-{{key}}">
+          <label for="body">Body</label>
+          <input type="text" id="body-{{key}}">
+          <button class="add-note" data-article={{_id}} data-id={{key}}>Add Note</button>
+        </form>
+        <div class="notes-display" id="notes-{{key}}">
+          {{#if note}}
+          <button class="delete-note" data-note={{note._id}} data-articlekey={{key}}>&times;</button>
+          <div class="note-text">
+            <h3 class="note-title">{{note.title}}</h3>
+            <p class="note-body">{{note.body}}</p>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

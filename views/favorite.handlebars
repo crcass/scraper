@@ -1,0 +1,21 @@
+<div class="bg">
+  <div class="wrap">
+    <header>
+      <a href="/">
+        <h1><img src="/assets/images/logo.png"> News</h1>
+      </a>
+      <nav>
+        <a href="/"><button><i class="fas fa-arrow-left"></i> Home</button></a>
+      </nav>
+    </header>
+    <div class="site-container">
+      {{#each data}}
+      {{> favs}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/assets/js/index.js"></script>
+<script src="/assets/js/removeFavs.js"></script>

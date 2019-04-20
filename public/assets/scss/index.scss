@@ -1,0 +1,180 @@
+$gradient: linear-gradient(to right, #f7c626, #e5137d);
+
+html,
+body {
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+  color: #424242;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: #e5137d;
+  }
+}
+
+header {
+  height: 4em;
+  width: 100%;
+  color: #fff;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  h1 {
+    font-size: 1.9em;
+    margin-left: 0.5em;
+
+    img {
+      height: 0.9em;
+    }
+  }
+  nav {
+    display: flex;
+    margin-right: 0.5em;
+  }
+  button {
+    color: #e5137d;
+    background: transparent;
+    border: none;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.site-container {
+  margin-top: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article {
+  margin-bottom: 1em;
+  padding: 1em;
+
+  &:after {
+    display: block;
+    content: '';
+    width: 50%;
+    height: 2px;
+    margin: 1em auto 0;
+    border-radius: 2px;
+    background: $gradient;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .text-container {
+    padding: 0 1em;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      padding: 0.5em;
+      color: #424242;
+      background-color: #fff;
+      border: 3px solid #e5137d;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #fff;
+        background-color: #e5137d;
+        border: 3px solid #e5137d;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-width: 352px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 454px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 550px;
+  }
+}
+
+.note-container {
+  margin-top: 1em;
+  background-color: #efeff0;
+
+  input {
+    background-color: #efeff0;
+    border: none;
+    border-bottom: solid 1px #424242;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  .add-note {
+    padding: 0.5em;
+    color: #424242;
+    background-color: transparent;
+    border: 3px solid #f7c626;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #fff;
+      background-color: #f7c626;
+      border: 3px solid #f7c626;
+    }
+  }
+}
+
+.note {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  transition: padding 0.6s ease;
+}
+
+.expand {
+  padding: 1em 0.5em;
+  height: auto;
+  max-height: 600px;
+}
+
+.notes-display {
+  display: flex;
+
+  .delete-note {
+    background: none;
+    border: none;
+
+    &:hover {
+      color: #e5137d;
+    }
+  }
+
+  .note-text {
+    margin: 0 1em;
+  }
+}
