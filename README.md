@@ -13,5 +13,6 @@ Users can view headlines, images, & authors for each article, leave a comment, a
 - Currently only one comment/note displays at a time
 - Users are able to add multiple copies of the same article to favorites
 - Refreshing the articles will unlink the comments. The comments are still there, biding their time...
+- Some minor rendering issues that only appear when the database is empty
 
 ♥︎ cc
